@@ -8,7 +8,6 @@ const CampaignPage = () => {
       <Head>
         <title>수원동부교회 2025 행복한 사람들의 축제</title>
         <meta name="description" content="Join our campaign to make a difference!" />
-        <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#000000" />
         <link rel="apple-touch-icon" href="/logo192.png" />
