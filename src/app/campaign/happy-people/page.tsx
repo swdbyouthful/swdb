@@ -5,19 +5,9 @@ import React from 'react';
 const CampaignPage = () => {
   return (
     <>
-      <Head>
-        <title>수원동부교회 2025 행복한 사람들의 축제</title>
-        <meta name="description" content="Join our campaign to make a difference!" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#000000" />
-        <link rel="apple-touch-icon" href="/logo192.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="robots" content="noindex, nofollow" />
-        <meta name="googlebot" content="noindex, nofollow" />
-      </Head>
       <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
         <header style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <h1>Welcome to Our Campaign</h1>
+          <h1>수원동부교회 2025 행복한 사람들의 축제</h1>
           <p>Join us in making a difference!</p>
         </header>
         <section style={{ marginBottom: '30px' }}>
