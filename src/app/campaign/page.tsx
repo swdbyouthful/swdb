@@ -1,11 +1,11 @@
 import { notFound } from 'next/navigation';
 
-export default function Home() {
+export default function CampaignPage() {
   notFound();
 
   return (
-    <div className="">
-      <div></div>
+    <div>
+      <h1>Campaign Page</h1>
     </div>
   );
 }
