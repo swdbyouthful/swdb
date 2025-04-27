@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <link rel="icon" href="%PUBLIC_URL%/swdb.ico" />
+        <link rel="icon" href="/swdb.ico" />
       </Head>
       <body>
         <Main />
