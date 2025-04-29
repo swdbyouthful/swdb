@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import cn from 'classnames';
 import Head from 'next/head';
 import './globals.css';
+import Script from 'next/script';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -37,6 +38,11 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="robots" content="noindex, nofollow" />
         <meta name="googlebot" content="noindex, nofollow" />
+        <Script
+          type="text/javascript"
+          strategy="beforeInteractive"
+          src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NAVER_MAP_CLIENT_ID}`}
+        />
       </Head>
       <body className={cn(geistSans.variable, geistMono.variable, 'h-dvh overflow-y-auto antialiased')}>{children}</body>
     </html>
