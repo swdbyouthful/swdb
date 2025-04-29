@@ -8,12 +8,11 @@ const eventDate = '2025052509';
 
 const CampaignPage = () => {
   useEffect(() => {
-    !!window.naver &&
-      initNaverMap('map', {
-        center: new window.naver.maps.LatLng(37.2872, 127.0324),
-        zoom: 15,
-        mapTypeId: window.naver.maps.MapTypeId.NORMAL,
-      });
+    // initNaverMap('map', {
+    //   center: new window.naver.maps.LatLng(37.2872, 127.0324),
+    //   zoom: 15,
+    //   mapTypeId: window.naver.maps.MapTypeId.NORMAL,
+    // });
   }, []);
 
   return (
