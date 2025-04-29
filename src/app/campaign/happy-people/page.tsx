@@ -74,7 +74,6 @@ const CampaignPage = () => {
         </div>
 
         <div className={'aspect-2/1 w-full border p-[16px]'}>
-          {/* TODO: 슬라이드가 안넘어감 */}
           <Swiper
             modules={[Navigation, Autoplay, Pagination]}
             loop
