@@ -97,9 +97,10 @@ const CampaignPage = () => {
         </div>
 
         {/* TODO: url 변경 */}
-        <div className={'w-full border'}>
+        <div className={'aspect-16/9 w-full border'}>
           <iframe
             width="100%"
+            height="100%"
             src="https://www.youtube.com/embed/bCAH-KVT-hs?si=kU9eYBau-gQ87AAg"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
