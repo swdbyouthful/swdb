@@ -1,7 +1,7 @@
 declare global {
-  interface Window {
-    naver: any;
-  }
+  // interface Window {
+  //   naver: any;
+  // }
 }
 
 export {};
