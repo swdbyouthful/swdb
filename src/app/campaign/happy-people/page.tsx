@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
 import moment from 'moment';
-import { initNaverMap } from '@/utils';
+// import { initNaverMap } from '@/utils';
 import { Countdown } from '@/components';
 
 const eventDate = '2025052509';
