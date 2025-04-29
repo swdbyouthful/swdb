@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import moment from 'moment';
 // import { initNaverMap } from '@/utils';
 import { Countdown } from '@/components';
+import Image from 'next/image';
 
 const eventDate = '2025052509';
 
@@ -19,8 +20,13 @@ const CampaignPage = () => {
     <div className={'flex justify-center bg-gray-200 text-center'}>
       <div className={'flex w-full flex-col items-center gap-[20px] bg-white p-[20px] md:w-[750px]'}>
         <div className={'flex w-full flex-col gap-[8px] border p-[16px]'}>
-          {/* TODO: 전달받은 메인포스터로 변경 */}
-          <img className={'bg-green-300'} src={'https://swdbyouthful.github.io/swdb/image/main_banner.png'} />
+          <Image
+            className={'w-full bg-green-300'}
+            src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/main_banner.png`}
+            width={3840}
+            height={2160}
+            alt="대표이미지"
+          />
 
           <div>
             <span>{moment(eventDate, 'YYYYMMDDHH').format('YYYY. MM. DD')}</span>
