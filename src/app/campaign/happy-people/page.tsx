@@ -20,7 +20,7 @@ const CampaignPage = () => {
       <div className={'flex w-full flex-col items-center gap-[20px] bg-white p-[20px] md:w-[750px]'}>
         <div className={'flex w-full flex-col gap-[8px] border p-[16px]'}>
           {/* TODO: 전달받은 메인포스터로 변경 */}
-          <img className={'bg-green-300'} src={`${process.env.CDN_URL}/image/main_banner.png`} />
+          <img className={'bg-green-300'} src={'https://swdbyouthful.github.io/swdb/image/main_banner.png'} />
 
           <div>
             <span>{moment(eventDate, 'YYYYMMDDHH').format('YYYY. MM. DD')}</span>
@@ -48,7 +48,7 @@ const CampaignPage = () => {
           <div className={'flex justify-center text-[12px] whitespace-break-spaces'}>
             <span>{moment(eventDate, 'YYYYMMDDHH').format('YYYY년 M월 DD일, ')}</span>
             <span>{'앞으로 '}</span>
-            <Countdown targetDate={moment(eventDate, 'YYYYMMDDHH')} useHours={true} useMinutes={true} useSeconds={true} />
+            <Countdown targetDate={moment(eventDate, 'YYYYMMDDHH')} useHours={false} useMinutes={false} useSeconds={false} />
             <span>{' 남았습니다.'}</span>
           </div>
         </div>
