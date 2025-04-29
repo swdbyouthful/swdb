@@ -20,7 +20,7 @@ const CampaignPage = () => {
       <div className={'flex w-full flex-col items-center gap-[20px] bg-white p-[20px] md:w-[750px]'}>
         <div className={'flex w-full flex-col gap-[8px] border p-[16px]'}>
           {/* TODO: 전달받은 메인포스터로 변경 */}
-          <img className={'bg-green-300'} src={'/image/main_banner_sample.png'} />
+          <img className={'bg-green-300'} src={`${process.env.CDN_URL}/image/main_banner.png`} />
 
           <div>
             <span>{moment(eventDate, 'YYYYMMDDHH').format('YYYY. MM. DD')}</span>
