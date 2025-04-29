@@ -4,8 +4,21 @@ import moment from 'moment';
 // import { initNaverMap } from '@/utils';
 import { Countdown } from '@/components';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const eventDate = '2025052509';
+
+const slideImageUrlList = [
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_1.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_2.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_3.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_4.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_5.png`,
+];
 
 const CampaignPage = () => {
   useEffect(() => {
@@ -26,6 +39,7 @@ const CampaignPage = () => {
             width={3840}
             height={2160}
             alt="대표이미지"
+            priority
           />
 
           <div>
@@ -60,8 +74,26 @@ const CampaignPage = () => {
         </div>
 
         <div className={'aspect-2/1 w-full border p-[16px]'}>
-          {/* TODO: 포스터 - 전도와 영적전쟁, 행축포스터, 교회 예배안내 슬라이드, ... */}
-          {/* TODO: 사진슬라이드 - 교회행사사진, 교회외관사진, ... */}
+          {/* TODO: 슬라이드가 안넘어감 */}
+          <Swiper
+            modules={[Navigation, Autoplay, Pagination]}
+            loop
+            spaceBetween={50}
+            slidesPerView={1}
+            navigation
+            autoplay={{
+              delay: 2500,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+          >
+            {slideImageUrlList.map((url, index) => (
+              <SwiperSlide key={index}>
+                <Image className={'w-full bg-green-300'} src={url} width={3840} height={2160} alt={`슬라이드 ${index}`} priority />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
         {/* TODO: url 변경 */}
