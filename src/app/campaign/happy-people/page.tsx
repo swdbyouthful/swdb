@@ -30,7 +30,7 @@ const CampaignPage = () => {
   }, []);
 
   return (
-    <div className={'flex justify-center bg-gray-200 text-center'}>
+    <div className={'flex justify-center bg-gray-200 text-center select-none'}>
       <div className={'flex w-full flex-col items-center gap-[20px] bg-white p-[20px] md:w-[750px]'}>
         <div className={'flex w-full flex-col gap-[8px] border p-[16px]'}>
           <Image
