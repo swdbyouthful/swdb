@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import moment from 'moment';
 import { Countdown } from '@/components';
-import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -33,13 +32,13 @@ const CampaignPage = () => {
     <div className={'flex justify-center bg-gray-200 text-center select-none'}>
       <div className={'flex w-full flex-col items-center gap-[20px] bg-white p-[20px] md:w-[750px]'}>
         <div className={'flex w-full flex-col gap-[8px] border p-[16px]'}>
-          <Image
+          {/* TODO: Image 사용시 빌드후 이미지 못불러옴 */}
+          <img
             className={'w-full bg-green-300'}
             src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/main_banner.png`}
             width={3840}
             height={2160}
             alt="대표이미지"
-            priority
           />
 
           <div>
@@ -89,7 +88,7 @@ const CampaignPage = () => {
           >
             {slideImageUrlList.map((url, index) => (
               <SwiperSlide key={index}>
-                <Image className={'w-full bg-green-300'} src={url} width={3840} height={2160} alt={`슬라이드 ${index}`} priority />
+                <img className={'w-full bg-green-300'} src={url} width={3840} height={2160} alt={`슬라이드 ${index}`} />
               </SwiperSlide>
             ))}
           </Swiper>
