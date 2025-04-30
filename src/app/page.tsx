@@ -1,7 +1,12 @@
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 
 export default function Home() {
-  notFound();
+  const useRedirect = true;
+  if (useRedirect) {
+    redirect('/campaign/happy-people');
+  } else {
+    notFound();
+  }
 
   return (
     <div className="">
