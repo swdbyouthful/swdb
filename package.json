@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "predeploy": "yarn build",
+    "predeploy": "rm -rf .next && yarn build",
     "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles",
     "start": "npx serve@latest out",
     "lint": "next lint"
