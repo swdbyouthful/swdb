@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { initNaverMap } from '@/utils';
+import Image from 'next/image';
 
 const eventDate = '2025052509';
 
@@ -33,12 +34,13 @@ const CampaignPage = () => {
       <div className={'flex w-full flex-col items-center gap-[20px] bg-white p-[20px] md:w-[750px]'}>
         <div className={'flex w-full flex-col gap-[8px] border p-[16px]'}>
           {/* TODO: Image 사용시 빌드후 이미지 못불러옴 */}
-          <img
+          <Image
             className={'w-full bg-green-300'}
             src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/main_banner.png`}
             width={3840}
             height={2160}
             alt="대표이미지"
+            priority
           />
 
           <div>
@@ -88,7 +90,7 @@ const CampaignPage = () => {
           >
             {slideImageUrlList.map((url, index) => (
               <SwiperSlide key={index}>
-                <img className={'w-full bg-green-300'} src={url} width={3840} height={2160} alt={`슬라이드 ${index}`} />
+                <Image className={'w-full bg-green-300'} src={url} width={3840} height={2160} alt={`슬라이드 ${index}`} priority />
               </SwiperSlide>
             ))}
           </Swiper>
