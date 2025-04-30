@@ -47,11 +47,13 @@ export default function RootLayout({
         <meta name="googlebot" content="noindex, nofollow" />
       </head>
       <body className={cn(geistSans.variable, geistMono.variable, 'h-dvh overflow-y-auto antialiased')}>
-        <Script
-          type="text/javascript"
-          strategy="beforeInteractive"
-          src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NAVER_MAP_CLIENT_ID}`}
-        />
+        {!!process.env.NAVER_MAP_CLIENT_ID && (
+          <Script
+            type="text/javascript"
+            strategy="beforeInteractive"
+            src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NAVER_MAP_CLIENT_ID}`}
+          />
+        )}
         {children}
       </body>
     </html>
