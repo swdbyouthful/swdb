@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
 import moment from 'moment';
-// import { initNaverMap } from '@/utils';
 import { Countdown } from '@/components';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,6 +8,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { initNaverMap } from '@/utils';
 
 const eventDate = '2025052509';
 
@@ -22,11 +22,11 @@ const slideImageUrlList = [
 
 const CampaignPage = () => {
   useEffect(() => {
-    // initNaverMap('map', {
-    //   center: new window.naver.maps.LatLng(37.2872, 127.0324),
-    //   zoom: 15,
-    //   mapTypeId: window.naver.maps.MapTypeId.NORMAL,
-    // });
+    initNaverMap('map', {
+      center: new window.naver.maps.LatLng(37.233643, 127.065661),
+      zoom: 15,
+      mapTypeId: window.naver.maps.MapTypeId.NORMAL,
+    });
   }, []);
 
   return (

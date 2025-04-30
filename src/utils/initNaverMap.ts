@@ -8,15 +8,15 @@ export const initNaverMap = (mapContainerId: string, mapOptions: naver.maps.MapO
   const map = new naver.maps.Map(mapContainer, mapOptions);
 
   // Add a marker at the center of the map
-  // const marker = new naver.maps.Marker({
-  //   position: map.getCenter(),
-  //   map: map,
-  // });
+  const marker = new naver.maps.Marker({
+    position: map.getCenter(),
+    map: map,
+  });
 
   // Add a click event listener to the map
-  // naver.maps.Event.addListener(map, 'click', (event) => {
-  //   marker.setPosition(event.latlng);
-  // });
+  naver.maps.Event.addListener(map, 'click', (event) => {
+    marker.setPosition(event.latlng);
+  });
 
   return map;
 };
