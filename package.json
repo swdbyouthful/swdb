@@ -2,6 +2,7 @@
   "homepage": "https://swdbyouthful.github.com/swdb/",
   "name": "swdb",
   "version": "0.1.0",
+  "license": "UNLICENSED",
   "private": true,
   "scripts": {
     "dev": "next dev",
