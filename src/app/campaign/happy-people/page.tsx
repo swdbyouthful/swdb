@@ -34,6 +34,7 @@ const CampaignPage = () => {
         position: window.naver.maps.Position.RIGHT_TOP,
         style: window.naver.maps.ZoomControlStyle.SMALL,
       },
+      scrollWheel: false,
     });
   }, []);
 
