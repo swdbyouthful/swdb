@@ -60,14 +60,9 @@ const CampaignPage = () => {
 
           {/* MEMO: 초대장 본문 */}
           <div className={'chosunilbo_myungo-regular text-[12px] leading-[1.3]'}>
-            <p className={'mt-[8px]'}>행복한 사람들의 축제는 교회 공동체 속에</p>
-            <p className={''}>전도운동과 영적 각성운동을 동시에 불러일으키는</p>
-            <p className={''}>전 교회적 운동으로 세상에 복음을 편만하게 선포하는 것이</p>
-            <p className={''}>그 목적입니다. 행복한 사람들의 축제는</p>
-            <p className={''}>지역 사회에 교회의 위상을 높이고 성도들로 하여금</p>
-            <p className={''}>전도에 대한 자신감을 갖게 하며 단 한 번도 교회를</p>
-            <p className={''}>가본 적이 없는 사람들을 교회로 초청하여</p>
-            <p className={''}>예수님을 전하는 전도입니다.</p>
+            <p className={'mt-[8px]'}>행복하기를 원하는 사람은 많지만, 정작 그 행복을 찾은 사람은 적습니다.</p>
+            <p className={''}>살아계신 하나님을 만나 행복한 사람들이 그 행복을 당신에게 소개하고자 합니다.</p>
+            <p className={''}>세상에서 가장 행복한 축제에 당신을 초대합니다.</p>
           </div>
 
           <div className={'nanum-square-neo-extra-bold flex justify-center text-[14px] whitespace-break-spaces text-[#276616]'}>
