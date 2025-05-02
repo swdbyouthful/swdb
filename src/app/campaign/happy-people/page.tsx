@@ -112,19 +112,49 @@ const CampaignPage = () => {
           >
             {'경기 화성시 영통로26번길 12'}
           </a>
-          {/* TODO: 네이버지도 api 초기화 해결중 */}
           <div id="map" className={'aspect-1/1 w-full'}></div>
 
-          <div className={'mt-[8px] flex gap-[8px]'}>
-            {/* TODO: 아이콘도 추가 */}
-            {/* TODO: 네이버지도 */}
-            <a className={'aspect-1/1 flex-auto bg-green-300'}></a>
-            {/* TODO: 카카오맵 */}
-            <a className={'aspect-1/1 flex-auto bg-green-300'}></a>
-            {/* TODO: 홈페이지 링크 */}
-            <a className={'aspect-1/1 flex-auto bg-green-300'}></a>
-            {/* TODO: 유튜브 링크 */}
-            <a className={'aspect-1/1 flex-auto bg-green-300'}></a>
+          <div className={'mt-[8px] flex gap-[20px]'}>
+            {/* MEMO: 네이버지도 */}
+            <a className={'aspect-1/1 flex-auto'} target="_blank" href={'https://map.naver.com/p/entry/place/13068216?c=15.00,0,0,0,dh'}>
+              <Image
+                className={''}
+                src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/Map_Service_Icon.png`}
+                width={170}
+                height={170}
+                alt="네이버지도"
+              />
+            </a>
+            {/* MEMO: 카카오맵 */}
+            <a className={'aspect-1/1 flex-auto'} target="_blank" href={'https://kko.kakao.com/DyIRZgeqZj'}>
+              <Image
+                className={''}
+                src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/kakaomap_basic.png`}
+                width={170}
+                height={170}
+                alt="카카오맵"
+              />
+            </a>
+            {/* MEMO: 홈페이지 링크 */}
+            <a className={'aspect-1/1 flex-auto'} target="_blank" href={'http://www.dongbu2030.or.kr/'}>
+              <Image
+                className={''}
+                src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/swdb_ico.jpg`}
+                width={170}
+                height={170}
+                alt="홈페이지"
+              />
+            </a>
+            {/* MEMO: 유튜브 링크 */}
+            <a className={'flex aspect-1/1 flex-auto items-center'} target="_blank" href={'https://www.youtube.com/@suwondongbu'}>
+              <Image
+                className={''}
+                src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/youtube_social_icon_red.png`}
+                width={170}
+                height={170}
+                alt="YOUTUBE"
+              />
+            </a>
           </div>
         </div>
       </div>
