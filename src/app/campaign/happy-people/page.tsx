@@ -23,9 +23,17 @@ const slideImageUrlList = [
 const CampaignPage = () => {
   useEffect(() => {
     initNaverMap('map', {
-      center: new window.naver.maps.LatLng(37.233643, 127.065661),
-      zoom: 18,
       mapTypeId: window.naver.maps.MapTypeId.NORMAL,
+      center: new window.naver.maps.LatLng(37.233643, 127.065661),
+      zoom: 17,
+      maxZoom: 19,
+      minZoom: 13,
+      draggable: false,
+      zoomControl: true,
+      zoomControlOptions: {
+        position: window.naver.maps.Position.RIGHT_TOP,
+        style: window.naver.maps.ZoomControlStyle.SMALL,
+      },
     });
   }, []);
 
@@ -40,7 +48,7 @@ const CampaignPage = () => {
             width={3840}
             height={2160}
             alt="대표이미지"
-            priority
+            loading="lazy"
           />
 
           <div className={'diphylleia-regular leading-[1.2] font-bold text-[#276616]'}>
@@ -49,7 +57,7 @@ const CampaignPage = () => {
             <p className={'text-[15px] tracking-[-2px]'}>그 행복의 현장으로 여러분을 초대합니다</p>
           </div>
 
-          {/* TODO: 초대하는 글 확인후 변경 */}
+          {/* MEMO: 초대장 본문 */}
           <div className={'chosunilbo_myungo-regular text-[12px] leading-[1.3]'}>
             <p className={'mt-[8px]'}>행복한 사람들의 축제는 교회 공동체 속에</p>
             <p className={''}>전도운동과 영적 각성운동을 동시에 불러일으키는</p>
@@ -85,7 +93,7 @@ const CampaignPage = () => {
           >
             {slideImageUrlList.map((url, index) => (
               <SwiperSlide key={index}>
-                <Image className={'w-full'} src={url} width={3840} height={2160} alt={`슬라이드 ${index}`} priority />
+                <Image className={'w-full'} src={url} width={3840} height={2160} alt={`슬라이드 ${index}`} loading="lazy" />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -108,6 +116,7 @@ const CampaignPage = () => {
           <p className={'nanum-square-neo-heavy text-[20px] text-[#1a191b]'}>오시는 길</p>
           <a
             className={'nanum-square-neo-extra-bold text-[10px] text-[#1a191b]'}
+            target="_blank"
             href={'https://map.naver.com/p/entry/place/13068216?c=15.00,0,0,0,dh'}
           >
             {'경기 화성시 영통로26번길 12'}
