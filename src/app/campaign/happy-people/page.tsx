@@ -41,7 +41,7 @@ const CampaignPage = () => {
   return (
     <div className={'flex justify-center bg-[#fffbec] text-center select-none'}>
       <div className={'flex w-full flex-col items-center gap-[20px] bg-white p-[20px] md:w-[750px]'}>
-        <div className={'flex w-full flex-col gap-[8px]'}>
+        <div className={'flex w-full flex-col items-center gap-[8px]'}>
           {/* TODO: Image 사용시 빌드후 이미지 못불러옴 */}
           <Image
             className={'w-full'}
@@ -66,7 +66,11 @@ const CampaignPage = () => {
             <p className={''}>세상에서 가장 행복한 축제에 당신을 초대합니다.</p>
           </div>
 
-          <div className={'nanum-square-neo-extra-bold flex justify-center text-[14px] whitespace-nowrap text-[#276616]'}>
+          <div
+            className={
+              'nanum-square-neo-extra-bold flex w-[fit-content] justify-center border border-[#1A191B] px-[4px] text-[14px] whitespace-nowrap text-[#276616]'
+            }
+          >
             <span>{moment(eventDate, 'YYYYMMDDHH').format('YYYY년 M월 DD일, ')}</span>
             <span>{'앞으로 '}</span>
             <Countdown targetDate={moment(eventDate, 'YYYYMMDDHH')} useHours={false} useMinutes={false} useSeconds={false} />
