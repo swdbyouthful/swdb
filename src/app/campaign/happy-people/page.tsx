@@ -116,7 +116,7 @@ const CampaignPage = () => {
         <div className={'w-full'}>
           <p className={'nanum-square-neo-heavy text-[20px] text-[#1a191b]'}>오시는 길</p>
           <a
-            className={'nanum-square-neo-extra-bold text-[10px] text-[#1a191b]'}
+            className={'nanum-square-neo-extra-bold text-[13px] text-[#1a191b]'}
             target="_blank"
             href={'https://map.naver.com/p/entry/place/13068216?c=15.00,0,0,0,dh'}
           >
