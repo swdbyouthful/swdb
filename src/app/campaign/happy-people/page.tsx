@@ -13,11 +13,11 @@ import Image from 'next/image';
 const eventDate = '2025052509';
 
 const slideImageUrlList = [
-  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_1.png`,
   `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_2.png`,
   `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_3.png`,
   `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_4.png`,
   `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_5.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_6.png`,
 ];
 
 const CampaignPage = () => {
@@ -52,20 +52,21 @@ const CampaignPage = () => {
             loading="lazy"
           />
 
-          <div className={'diphylleia-regular leading-[1.2] font-bold text-[#276616]'}>
+          <div className={'diphylleia-regular leading-[1.2] font-bold tracking-[-2px] text-[#276616]'}>
             {/* TODO: font-size, letter-spacing 요청값 반영 불가 임시반영 */}
-            <p className={'text-[20px] tracking-[-2px]'}>예수님을 만나면 행복해집니다</p>
-            <p className={'text-[15px] tracking-[-2px]'}>그 행복의 현장으로 여러분을 초대합니다</p>
+            <p className={'text-[20px]'}>예수님을 만나면 행복해집니다</p>
+            <p className={'text-[15px]'}>그 행복의 현장으로 여러분을 초대합니다</p>
           </div>
 
           {/* MEMO: 초대장 본문 */}
-          <div className={'chosunilbo_myungo-regular text-[12px] leading-[1.3]'}>
+          <div className={'chosunilbo_myungo-regular text-[12px] leading-[1.3] tracking-[-2px] break-keep'}>
             <p className={'mt-[8px]'}>행복하기를 원하는 사람은 많지만, 정작 그 행복을 찾은 사람은 적습니다.</p>
-            <p className={''}>살아계신 하나님을 만나 행복한 사람들이 그 행복을 당신에게 소개하고자 합니다.</p>
+            <p className={''}>살아계신 하나님을 만나 행복한 사람들이</p>
+            <p className={''}>그 행복을 당신에게 소개하고자 합니다.</p>
             <p className={''}>세상에서 가장 행복한 축제에 당신을 초대합니다.</p>
           </div>
 
-          <div className={'nanum-square-neo-extra-bold flex justify-center text-[14px] whitespace-break-spaces text-[#276616]'}>
+          <div className={'nanum-square-neo-extra-bold flex justify-center text-[14px] whitespace-nowrap text-[#276616]'}>
             <span>{moment(eventDate, 'YYYYMMDDHH').format('YYYY년 M월 DD일, ')}</span>
             <span>{'앞으로 '}</span>
             <Countdown targetDate={moment(eventDate, 'YYYYMMDDHH')} useHours={false} useMinutes={false} useSeconds={false} />
