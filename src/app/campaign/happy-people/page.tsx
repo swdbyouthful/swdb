@@ -24,7 +24,7 @@ const CampaignPage = () => {
   useEffect(() => {
     initNaverMap('map', {
       center: new window.naver.maps.LatLng(37.233643, 127.065661),
-      zoom: 15,
+      zoom: 18,
       mapTypeId: window.naver.maps.MapTypeId.NORMAL,
     });
   }, []);
@@ -114,7 +114,7 @@ const CampaignPage = () => {
           </a>
           <div id="map" className={'aspect-1/1 w-full'}></div>
 
-          <div className={'mt-[8px] flex gap-[20px]'}>
+          <div className={'mt-[8px] flex gap-[40px]'}>
             {/* MEMO: 네이버지도 */}
             <a className={'aspect-1/1 flex-auto'} target="_blank" href={'https://map.naver.com/p/entry/place/13068216?c=15.00,0,0,0,dh'}>
               <Image
