@@ -4,7 +4,8 @@ const nextConfig: NextConfig = {
   output: 'export',
   assetPrefix: process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb' : '',
   images: {
-    unoptimized: false,
+    // domains: ['swdbyouthful.github.io'],
+    unoptimized: true,
   },
   // images: {
   //   loader: 'imgix',

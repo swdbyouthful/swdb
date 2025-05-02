@@ -34,7 +34,14 @@ const CampaignPage = () => {
       <div className={'flex w-full flex-col items-center gap-[20px] bg-white p-[20px] md:w-[750px]'}>
         <div className={'flex w-full flex-col gap-[8px]'}>
           {/* TODO: Image 사용시 빌드후 이미지 못불러옴 */}
-          <Image className={'w-full bg-green-300'} src={'/image/main_banner.png'} width={3840} height={2160} alt="대표이미지" priority />
+          <Image
+            className={'w-full'}
+            src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/main_banner.png`}
+            width={3840}
+            height={2160}
+            alt="대표이미지"
+            priority
+          />
 
           <div className={'diphylleia-regular leading-[1.2] font-bold text-[#276616]'}>
             {/* TODO: font-size, letter-spacing 요청값 반영 불가 임시반영 */}
@@ -78,7 +85,7 @@ const CampaignPage = () => {
           >
             {slideImageUrlList.map((url, index) => (
               <SwiperSlide key={index}>
-                <Image className={'w-full bg-green-300'} src={url} width={3840} height={2160} alt={`슬라이드 ${index}`} priority />
+                <Image className={'w-full'} src={url} width={3840} height={2160} alt={`슬라이드 ${index}`} priority />
               </SwiperSlide>
             ))}
           </Swiper>
