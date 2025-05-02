@@ -15,6 +15,7 @@ export const initNaverMap = (mapContainerId: string, mapOptions: naver.maps.MapO
 
   // Add a click event listener to the map
   naver.maps.Event.addListener(map, 'click', (event) => {
+    return;
     marker.setPosition(event.latlng);
   });
 
