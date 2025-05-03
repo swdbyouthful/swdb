@@ -106,7 +106,7 @@ const CampaignPage = () => {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/bCAH-KVT-hs?si=kU9eYBau-gQ87AAg"
+            src="https://www.youtube.com/embed/AB4ItzOL7M0?si=fsslNxJiLlWQAhdr"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
