@@ -44,7 +44,7 @@ const CampaignPage = () => {
         <div className={'flex w-full flex-col items-center gap-[8px]'}>
           {/* TODO: Image 사용시 빌드후 이미지 못불러옴 */}
           <Image
-            className={'w-full'}
+            className={'w-full rounded-sm'}
             src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/main_banner.png`}
             width={3840}
             height={2160}
@@ -61,9 +61,9 @@ const CampaignPage = () => {
           {/* MEMO: 초대장 본문 */}
           <div className={'chosunilbo_myungo-regular text-[12px] leading-[1.3] break-keep'}>
             <p className={'mt-[8px]'}>행복하기를 원하는 사람은 많지만, 정작 그 행복을 찾은 사람은 적습니다.</p>
-            <p className={''}>살아계신 하나님을 만나 행복한 사람들이</p>
-            <p className={''}>그 행복을 당신에게 소개하고자 합니다.</p>
-            <p className={''}>세상에서 가장 행복한 축제에 당신을 초대합니다.</p>
+            <p>살아계신 하나님을 만나 행복한 사람들이</p>
+            <p>그 행복을 당신에게 소개하고자 합니다.</p>
+            <p>세상에서 가장 행복한 축제에 당신을 초대합니다.</p>
           </div>
 
           <div
@@ -78,7 +78,7 @@ const CampaignPage = () => {
           </div>
         </div>
 
-        <div className={'aspect-2/1 w-full'}>
+        <div className={'min-h-[188px] w-full overflow-hidden rounded-sm'}>
           <Swiper
             modules={[Navigation, Autoplay, Pagination]}
             loop
@@ -101,7 +101,7 @@ const CampaignPage = () => {
         </div>
 
         {/* TODO: url 변경 */}
-        <div className={'aspect-16/9 w-full'}>
+        <div className={'aspect-16/9 w-full overflow-hidden rounded-sm'}>
           <iframe
             width="100%"
             height="100%"
@@ -122,7 +122,8 @@ const CampaignPage = () => {
           >
             {'경기 화성시 영통로26번길 12'}
           </a>
-          <div id="map" className={'aspect-1/1 w-full'}></div>
+
+          <div id="map" className={'aspect-1/1 w-full rounded-sm'}></div>
 
           <div className={'mt-[8px] flex gap-[40px]'}>
             {/* MEMO: 네이버지도 */}
