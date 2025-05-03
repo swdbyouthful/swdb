@@ -59,7 +59,7 @@ const CampaignPage = () => {
           </div>
 
           {/* MEMO: 초대장 본문 */}
-          <div className={'chosunilbo_myungo-regular text-[12px] leading-[1.3] tracking-[-2px] break-keep'}>
+          <div className={'chosunilbo_myungo-regular text-[12px] leading-[1.3] break-keep'}>
             <p className={'mt-[8px]'}>행복하기를 원하는 사람은 많지만, 정작 그 행복을 찾은 사람은 적습니다.</p>
             <p className={''}>살아계신 하나님을 만나 행복한 사람들이</p>
             <p className={''}>그 행복을 당신에게 소개하고자 합니다.</p>
@@ -68,11 +68,11 @@ const CampaignPage = () => {
 
           <div
             className={
-              'nanum-square-neo-extra-bold flex w-[fit-content] justify-center border border-[#1A191B] px-[4px] text-[14px] whitespace-nowrap text-[#276616]'
+              'nanum-square-neo-extra-bold flex w-[fit-content] justify-center border border-[#1A191B] px-[4px] text-[14px] whitespace-break-spaces text-[#276616]'
             }
           >
-            <span>{moment(eventDate, 'YYYYMMDDHH').format('YYYY년 M월 DD일, ')}</span>
-            <span>{'앞으로 '}</span>
+            <span className={'whitespace-nowrap'}>{moment(eventDate, 'YYYYMMDDHH').format('YYYY년 M월 DD일,')}</span>
+            <span>{' 앞으로 '}</span>
             <Countdown targetDate={moment(eventDate, 'YYYYMMDDHH')} useHours={false} useMinutes={false} useSeconds={false} />
             <span>{' 남았습니다.'}</span>
           </div>
