@@ -18,6 +18,8 @@ const slideImageUrlList = [
   `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_4.png`,
   `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_5.png`,
   `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_6.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_7.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_8.png`,
 ];
 
 const CampaignPage = () => {
