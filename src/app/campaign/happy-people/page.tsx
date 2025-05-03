@@ -42,7 +42,6 @@ const CampaignPage = () => {
     <div className={'flex justify-center bg-[#fffbec] text-center select-none'}>
       <div className={'flex w-full flex-col items-center gap-[20px] bg-white p-[20px] md:w-[750px]'}>
         <div className={'flex w-full flex-col items-center gap-[8px]'}>
-          {/* TODO: Image 사용시 빌드후 이미지 못불러옴 */}
           <Image
             className={'w-full rounded-sm'}
             src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/main_banner.png`}
@@ -53,13 +52,12 @@ const CampaignPage = () => {
           />
 
           <div className={'diphylleia-regular leading-[1.2] font-bold tracking-[-2px] text-[#276616]'}>
-            {/* TODO: font-size, letter-spacing 요청값 반영 불가 임시반영 */}
             <p className={'text-[20px]'}>예수님을 만나면 행복해집니다</p>
             <p className={'text-[15px]'}>그 행복의 현장으로 여러분을 초대합니다</p>
           </div>
 
           {/* MEMO: 초대장 본문 */}
-          <div className={'chosunilbo_myungo-regular text-[12px] leading-[1.3] break-keep'}>
+          <div className={'chosunilbo_myungo-regular text-[12px] leading-[1.3] font-bold break-keep'}>
             <p className={'mt-[8px]'}>행복하기를 원하는 사람은 많지만, 정작 그 행복을 찾은 사람은 적습니다.</p>
             <p>살아계신 하나님을 만나 행복한 사람들이</p>
             <p>그 행복을 당신에게 소개하고자 합니다.</p>
