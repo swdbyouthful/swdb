@@ -23,18 +23,10 @@ const slideImageUrlList = [
 const CampaignPage = () => {
   useEffect(() => {
     initNaverMap('map', {
-      mapTypeId: window.naver.maps.MapTypeId.NORMAL,
       center: new window.naver.maps.LatLng(37.233643, 127.065661),
       zoom: 17,
       maxZoom: 19,
       minZoom: 13,
-      draggable: false,
-      zoomControl: true,
-      zoomControlOptions: {
-        position: window.naver.maps.Position.RIGHT_TOP,
-        style: window.naver.maps.ZoomControlStyle.SMALL,
-      },
-      scrollWheel: false,
     });
   }, []);
 
