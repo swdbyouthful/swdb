@@ -32,7 +32,7 @@ const CampaignPage = () => {
 
   return (
     <div className={'flex justify-center bg-[#fffbec] text-center select-none'}>
-      <div className={'flex w-full flex-col items-center gap-[20px] bg-[#fffbec] p-[20px] md:w-[750px]'}>
+      <div className={'flex w-full flex-col items-center gap-[20px] bg-[#ffffff] p-[20px] md:w-[750px]'}>
         <div className={'flex w-full flex-col items-center gap-[8px]'}>
           <Image
             className={'w-full rounded-sm'}
@@ -84,8 +84,8 @@ const CampaignPage = () => {
             }}
             style={
               {
-                '--swiper-navigation-color': '#276616',
-                '--swiper-pagination-color': '#276616',
+                '--swiper-navigation-color': '#CDC9C3',
+                '--swiper-pagination-color': '#CDC9C3',
                 '--swiper-pagination-bullet-inactive-opacity': '0.5',
                 '--swiper-pagination-bullet-inactive-color': '#ffffff',
               } as CSSProperties
