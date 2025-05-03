@@ -5,7 +5,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
     "predeploy": "rm -rf .next && yarn build",
     "deploy": "touch out/.nojekyll && gh-pages -d out --dotfiles",
