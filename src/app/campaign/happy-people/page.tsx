@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { CSSProperties, useEffect } from 'react';
 import moment from 'moment';
 import { Countdown } from '@/components';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -40,7 +40,7 @@ const CampaignPage = () => {
 
   return (
     <div className={'flex justify-center bg-[#fffbec] text-center select-none'}>
-      <div className={'flex w-full flex-col items-center gap-[20px] bg-white p-[20px] md:w-[750px]'}>
+      <div className={'flex w-full flex-col items-center gap-[20px] bg-[#fffbec] p-[20px] md:w-[750px]'}>
         <div className={'flex w-full flex-col items-center gap-[8px]'}>
           <Image
             className={'w-full rounded-sm'}
@@ -58,7 +58,8 @@ const CampaignPage = () => {
 
           {/* MEMO: 초대장 본문 */}
           <div className={'chosunilbo_myungo-regular text-[12px] leading-[1.3] font-bold break-keep'}>
-            <p className={'mt-[8px]'}>행복하기를 원하는 사람은 많지만, 정작 그 행복을 찾은 사람은 적습니다.</p>
+            <p className={'mt-[8px]'}>행복하기를 원하는 사람은 많지만,</p>
+            <p>정작 그 행복을 찾은 사람은 적습니다.</p>
             <p>살아계신 하나님을 만나 행복한 사람들이</p>
             <p>그 행복을 당신에게 소개하고자 합니다.</p>
             <p>세상에서 가장 행복한 축제에 당신을 초대합니다.</p>
@@ -89,6 +90,14 @@ const CampaignPage = () => {
             pagination={{
               clickable: true,
             }}
+            style={
+              {
+                '--swiper-navigation-color': '#276616',
+                '--swiper-pagination-color': '#276616',
+                '--swiper-pagination-bullet-inactive-opacity': '0.5',
+                '--swiper-pagination-bullet-inactive-color': '#ffffff',
+              } as CSSProperties
+            }
           >
             {slideImageUrlList.map((url, index) => (
               <SwiperSlide key={index}>
