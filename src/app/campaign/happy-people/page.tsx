@@ -45,7 +45,7 @@ const CampaignPage = () => {
             loading="lazy"
           />
 
-          <div className={'diphylleia-regular leading-[1.2] font-bold tracking-[-2px] text-[#276616]'}>
+          <div className={'diphylleia-regular mt-[12px] leading-[1.2] font-bold tracking-[-2px] text-[#276616]'}>
             <p className={'text-[20px]'}>예수님을 만나면 행복해집니다</p>
             <p className={'text-[15px]'}>그 행복의 현장으로 여러분을 초대합니다</p>
           </div>
