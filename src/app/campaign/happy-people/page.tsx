@@ -126,7 +126,7 @@ const CampaignPage = () => {
 
           <div id="map" className={'aspect-1/1 w-full rounded-sm'}></div>
 
-          <div className={'mt-[8px] flex gap-[40px]'}>
+          <div className={'mt-[20px] flex gap-[40px]'}>
             {/* MEMO: 네이버지도 */}
             <a className={'aspect-1/1 flex-auto'} target="_blank" href={'https://map.naver.com/p/entry/place/13068216?c=15.00,0,0,0,dh'}>
               <Image
