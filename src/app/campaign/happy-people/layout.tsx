@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://swdbyouthful.github.io/swdb/image/main_banner.png',
+        url: 'https://swdbyouthful.github.io/swdb/image/main_banner_2.png',
         width: 1280,
         height: 720,
         alt: '행복한 사람들의 봄 축제 초대장',
