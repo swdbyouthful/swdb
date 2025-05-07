@@ -8,7 +8,7 @@ export const initNaverMap = (mapContainerId: string, mapOptions: naver.maps.MapO
 
   const defaultMapOptions = {
     mapTypeId: window.naver.maps.MapTypeId.NORMAL,
-    draggable: false,
+    draggable: true,
     zoomControl: true,
     zoomControlOptions: {
       position: window.naver.maps.Position.RIGHT_TOP,
