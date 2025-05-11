@@ -126,9 +126,13 @@ const CampaignPage = () => {
 
           <div id="map" className={'aspect-1/1 w-full rounded-sm'}></div>
 
-          <div className={'mt-[20px] flex gap-[40px]'}>
+          <div className={'mt-[20px] flex justify-evenly gap-[40px]'}>
             {/* MEMO: 네이버지도 */}
-            <a className={'aspect-1/1 flex-auto'} target="_blank" href={'https://map.naver.com/p/entry/place/13068216?c=15.00,0,0,0,dh'}>
+            <a
+              className={'aspect-1/1 max-w-[90px] flex-auto'}
+              target="_blank"
+              href={'https://map.naver.com/p/entry/place/13068216?c=15.00,0,0,0,dh'}
+            >
               <Image
                 className={''}
                 src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/Map_Service_Icon.png`}
@@ -138,7 +142,7 @@ const CampaignPage = () => {
               />
             </a>
             {/* MEMO: 카카오맵 */}
-            <a className={'aspect-1/1 flex-auto'} target="_blank" href={'https://kko.kakao.com/DyIRZgeqZj'}>
+            <a className={'aspect-1/1 max-w-[90px] flex-auto'} target="_blank" href={'https://kko.kakao.com/DyIRZgeqZj'}>
               <Image
                 className={''}
                 src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/kakaomap_basic.png`}
@@ -148,7 +152,7 @@ const CampaignPage = () => {
               />
             </a>
             {/* MEMO: 홈페이지 링크 */}
-            <a className={'aspect-1/1 flex-auto'} target="_blank" href={'http://www.dongbu2030.or.kr/'}>
+            <a className={'aspect-1/1 max-w-[90px] flex-auto'} target="_blank" href={'http://www.dongbu2030.or.kr/'}>
               <Image
                 className={''}
                 src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/swdb_ico.jpg`}
@@ -158,7 +162,11 @@ const CampaignPage = () => {
               />
             </a>
             {/* MEMO: 유튜브 링크 */}
-            <a className={'flex aspect-1/1 flex-auto items-center'} target="_blank" href={'https://www.youtube.com/@suwondongbu'}>
+            <a
+              className={'flex aspect-1/1 max-w-[90px] flex-auto items-center'}
+              target="_blank"
+              href={'https://www.youtube.com/@suwondongbu'}
+            >
               <Image
                 className={''}
                 src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/youtube_social_icon_red.png`}
