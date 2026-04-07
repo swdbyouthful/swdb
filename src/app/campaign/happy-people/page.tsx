@@ -7,7 +7,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { initNaverMap } from '@/utils';
+// import { initNaverMap } from '@/utils';
 import Image from 'next/image';
 
 const eventDate = '2025052509';
@@ -24,12 +24,13 @@ const slideImageUrlList = [
 
 const CampaignPage = () => {
   useEffect(() => {
-    initNaverMap('map', {
-      center: new window.naver.maps.LatLng(37.233643, 127.065661),
-      zoom: 17,
-      maxZoom: 19,
-      minZoom: 13,
-    });
+    window.location.href = 'http://www.dongbu2030.or.kr/';
+    // initNaverMap('map', {
+    //   center: new window.naver.maps.LatLng(37.233643, 127.065661),
+    //   zoom: 17,
+    //   maxZoom: 19,
+    //   minZoom: 13,
+    // });
   }, []);
 
   return (
