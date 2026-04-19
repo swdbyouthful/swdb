@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import cn from 'classnames';
 import './globals.css';
-import Script from 'next/script';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -52,16 +51,7 @@ export default function RootLayout({
 
         <link rel="manifest" href="/swdb/manifest.json" />
       </head>
-      <body className={cn(geistSans.variable, geistMono.variable, 'h-dvh overflow-y-auto antialiased')}>
-        {!!process.env.NAVER_MAP_CLIENT_ID && (
-          <Script
-            type="text/javascript"
-            strategy="beforeInteractive"
-            src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NAVER_MAP_CLIENT_ID}`}
-          />
-        )}
-        {children}
-      </body>
+      <body className={cn(geistSans.variable, geistMono.variable, 'h-dvh overflow-y-auto antialiased')}>{children}</body>
     </html>
   );
 }

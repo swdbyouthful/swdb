@@ -1,5 +1,5 @@
 'use client';
-import React, { CSSProperties, useEffect } from 'react';
+import React, { CSSProperties } from 'react';
 import moment from 'moment';
 import { Countdown } from '@/components';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,6 +9,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { initNaverMap } from '@/utils';
 import Image from 'next/image';
+import Script from 'next/script';
 
 const eventDate = '2025052509';
 
@@ -23,18 +24,6 @@ const slideImageUrlList = [
 ];
 
 const CampaignPage = () => {
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
-      window.location.href = 'http://www.dongbu2030.or.kr/';
-    }
-    initNaverMap('map', {
-      center: new window.naver.maps.LatLng(37.233643, 127.065661),
-      zoom: 17,
-      maxZoom: 19,
-      minZoom: 13,
-    });
-  }, []);
-
   return (
     <div className={'flex justify-center bg-[#fffbec] text-center select-none'}>
       <div className={'flex w-full flex-col items-center gap-[20px] bg-[#ffffff] p-[20px] md:w-[750px]'}>
@@ -127,6 +116,20 @@ const CampaignPage = () => {
             {'경기 화성시 영통로26번길 12'}
           </a>
 
+          {process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID && (
+            <Script
+              strategy="afterInteractive"
+              src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID}`}
+              onReady={() => {
+                initNaverMap('map', {
+                  center: new window.naver.maps.LatLng(37.233643, 127.065661),
+                  zoom: 17,
+                  maxZoom: 19,
+                  minZoom: 13,
+                });
+              }}
+            />
+          )}
           <div id="map" className={'aspect-1/1 w-full rounded-sm'}></div>
 
           <div className={'mt-[20px] flex justify-evenly gap-[40px]'}>

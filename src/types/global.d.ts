@@ -1,6 +1,8 @@
+/// <reference types="navermaps" />
+
 declare global {
   interface Window {
-    naver: any;
+    naver: typeof naver;
   }
 }
 
