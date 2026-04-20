@@ -7,20 +7,20 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { initNaverMap } from '@/utils';
+import { cn, initNaverMap } from '@/utils';
 import Image from 'next/image';
 import Script from 'next/script';
 
-const eventDate = '2025052509';
+const eventDate = '2026053109';
 
 const slideImageUrlList = [
-  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_2_2.png`,
-  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_3_2.png`,
-  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_4_2.png`,
-  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_5_2.png`,
-  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_6_2.png`,
-  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_7_2.png`,
-  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_8_2.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_2.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_3.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_4.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_5.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_6.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_7.png`,
+  `${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/slide_8.png`,
 ];
 
 const CampaignPage = () => {
@@ -30,7 +30,7 @@ const CampaignPage = () => {
         <div className={'flex w-full flex-col items-center gap-[8px]'}>
           <Image
             className={'w-full rounded-sm'}
-            src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/main_banner_2.png`}
+            src={`${process.env.NODE_ENV === 'production' ? 'https://swdbyouthful.github.io/swdb/' : '/'}image/main_banner.png`}
             width={3840}
             height={2160}
             alt="대표이미지"
@@ -52,14 +52,21 @@ const CampaignPage = () => {
           </div>
 
           <div
-            className={
-              'nanum-square-neo-extra-bold flex w-[fit-content] justify-center border border-[#1A191B] px-[4px] text-[14px] whitespace-break-spaces text-[#276616]'
-            }
+            className={cn(
+              `nanum-square-neo-extra-bold flex w-[fit-content] justify-center border border-[#1A191B] px-[4px] text-[14px] whitespace-pre text-[#276616] ${moment(eventDate, 'YYYYMMDDHH').diff(moment(), 'days') <= 0 ? 'flex-wrap' : ''}`
+            )}
           >
             <span className={'whitespace-nowrap'}>{moment(eventDate, 'YYYYMMDDHH').format('YYYY년 M월 DD일,')}</span>
-            <span>{' 앞으로 '}</span>
-            <Countdown targetDate={moment(eventDate, 'YYYYMMDDHH')} useHours={false} useMinutes={false} useSeconds={false} />
-            <span>{' 남았습니다.'}</span>
+
+            {moment(eventDate, 'YYYYMMDDHH').diff(moment(), 'days') > 0 ? (
+              <>
+                <span>{' 앞으로 '}</span>
+                <Countdown targetDate={moment(eventDate, 'YYYYMMDDHH')} useHours={false} useMinutes={false} useSeconds={false} />
+                <span>{' 남았습니다.'}</span>
+              </>
+            ) : (
+              <p>{'행복한 사람들의 축제가 시작되었습니다!'}</p>
+            )}
           </div>
         </div>
 
