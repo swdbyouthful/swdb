@@ -33,7 +33,20 @@ export const metadata: Metadata = {
   description: '수원동부교회 행복한 사람들의 봄 축제 초대장',
   manifest: '/swdb/manifest.json',
   icons: {
-    icon: process.env.NODE_ENV === 'production' ? `${SITE_URL}/swdb.ico` : '/swdb.ico',
+    icon: [
+      { url: process.env.NODE_ENV === 'production' ? `${SITE_URL}/swdb.ico` : '/swdb.ico', sizes: 'any' },
+      {
+        url: process.env.NODE_ENV === 'production' ? `${SITE_URL}/favicon-32x32.png` : '/favicon-32x32.png',
+        sizes: '32x32',
+        type: 'image/png',
+      },
+      {
+        url: process.env.NODE_ENV === 'production' ? `${SITE_URL}/favicon-16x16.png` : '/favicon-16x16.png',
+        sizes: '16x16',
+        type: 'image/png',
+      },
+    ],
+    apple: process.env.NODE_ENV === 'production' ? `${SITE_URL}/apple-touch-icon.png` : '/apple-touch-icon.png',
   },
   robots: {
     index: true,
