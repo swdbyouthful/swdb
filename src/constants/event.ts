@@ -13,7 +13,7 @@ export const CHURCH = {
   youtubeUrl: 'https://www.youtube.com/@suwondongbu',
 } as const;
 
-export const PROMO_VIDEO_SRC = 'https://www.youtube.com/embed/AB4ItzOL7M0?si=fsslNxJiLlWQAhdr';
+export const PROMO_VIDEO_SRC = 'https://www.youtube.com/embed/4QpsjSn1Lq8?si=dekgUJRiNgB3CeTi';
 
 export const MAP_DEFAULT_OPTIONS = {
   zoom: 17,
