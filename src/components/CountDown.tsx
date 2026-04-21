@@ -1,46 +1,69 @@
-import React from 'react';
-import moment from 'moment';
-import { useEffect, useState } from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
+import dayjs, { Dayjs } from 'dayjs';
+
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
+interface CountdownProps {
+  targetDate: Dayjs;
+  useDays?: boolean;
+  useHours?: boolean;
+  useMinutes?: boolean;
+  useSeconds?: boolean;
+}
+
+const calculateTimeLeft = (targetDate: Dayjs): TimeLeft | null => {
+  const now = dayjs();
+  const diffMs = targetDate.diff(now);
+
+  if (diffMs <= 0) return null;
+
+  return {
+    days: targetDate.diff(now, 'day'),
+    hours: targetDate.diff(now, 'hour') % 24,
+    minutes: targetDate.diff(now, 'minute') % 60,
+    seconds: targetDate.diff(now, 'second') % 60,
+  };
+};
 
 export const Countdown = ({
-  targetDate = moment('20250525', 'YYYYMMDD'),
+  targetDate,
   useDays = true,
   useHours = true,
   useMinutes = true,
   useSeconds = true,
-}) => {
-  const calculateTimeLeft = () => {
-    const now = moment();
-    const difference = targetDate.diff(now);
-
-    if (difference > 0) {
-      return {
-        days: targetDate.diff(now, 'days'),
-        hours: targetDate.diff(now, 'hours') % 24,
-        minutes: targetDate.diff(now, 'minutes') % 60,
-        seconds: targetDate.diff(now, 'seconds') % 60,
-      };
-    } else {
-      return null;
-    }
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+}: CountdownProps) => {
+  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(() => calculateTimeLeft(targetDate));
 
   useEffect(() => {
+    setTimeLeft(calculateTimeLeft(targetDate));
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      setTimeLeft(calculateTimeLeft(targetDate));
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]);
 
   if (!timeLeft) {
-    return <div>Event has started!</div>;
+    return <div>축제가 시작되었습니다!</div>;
   }
 
+  const ariaLabel = [
+    useDays && `${timeLeft.days}일`,
+    useHours && `${timeLeft.hours}시간`,
+    useMinutes && `${timeLeft.minutes}분`,
+    useSeconds && `${timeLeft.seconds}초`,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <div>
+    <div role="timer" aria-live="polite" aria-label={`${ariaLabel} 남음`}>
       {useDays && <span>{timeLeft.days}일</span>}
       {useHours && <span>{` ${timeLeft.hours}시간`}</span>}
       {useMinutes && <span>{` ${timeLeft.minutes}분`}</span>}

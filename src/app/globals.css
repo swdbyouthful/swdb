@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
 
 :root {
   --background: #ffffff;
@@ -13,18 +12,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* --background: #0a0a0a; */
-    /* --foreground: #ededed; */
-  }
-}
-
 @font-face {
   font-family: 'Chosunilbo_myungjo';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -34,6 +27,7 @@
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.eot?#iefix) format('embedded-opentype'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.woff) format('woff'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-dEb.ttf) format('truetype');
+  font-display: swap;
 }
 
 @font-face {
@@ -43,21 +37,22 @@
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.eot?#iefix) format('embedded-opentype'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.woff) format('woff'),
     url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeoTTF-eHv.ttf) format('truetype');
+  font-display: swap;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'NanumSquareNeoExtraBold', Arial, Helvetica, sans-serif;
 }
 
 .diphylleia-regular {
-  font-family: 'Diphylleia', serif;
+  font-family: var(--font-diphylleia), serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.chosunilbo_myungo-regular {
+.chosunilbo-myungjo-regular {
   font-family: 'Chosunilbo_myungjo', serif;
   font-style: normal;
 }

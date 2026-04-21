@@ -1,4 +1,4 @@
-export const initNaverMap = (mapContainerId: string, mapOptions: naver.maps.MapOptions) => {
+export const initNaverMap = (mapContainerId: string, mapOptions: naver.maps.MapOptions): void => {
   if (typeof window === 'undefined' || !window.naver?.maps) {
     console.warn('Naver Maps SDK is not loaded');
     return;
@@ -30,17 +30,8 @@ export const initNaverMap = (mapContainerId: string, mapOptions: naver.maps.MapO
 
   const map = new window.naver.maps.Map(mapContainer, { ...defaultMapOptions, ...mapOptions });
 
-  // Add a marker at the center of the map
-  const marker = new window.naver.maps.Marker({
+  new window.naver.maps.Marker({
     position: map.getCenter(),
-    map: map,
+    map,
   });
-
-  // Add a click event listener to the map
-  naver.maps.Event.addListener(map, 'click', (event) => {
-    return;
-    marker.setPosition(event.latlng);
-  });
-
-  return map;
 };
