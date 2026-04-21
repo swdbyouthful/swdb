@@ -38,9 +38,11 @@ export const Countdown = ({
   useMinutes = true,
   useSeconds = true,
 }: CountdownProps) => {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(() => calculateTimeLeft(targetDate));
+  const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     setTimeLeft(calculateTimeLeft(targetDate));
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft(targetDate));
@@ -48,6 +50,10 @@ export const Countdown = ({
 
     return () => clearInterval(timer);
   }, [targetDate]);
+
+  if (!mounted) {
+    return <div role="timer" aria-live="polite" />;
+  }
 
   if (!timeLeft) {
     return <div>축제가 시작되었습니다!</div>;

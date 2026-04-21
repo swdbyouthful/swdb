@@ -1,12 +1,16 @@
 'use client';
+import { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 import { Countdown } from '@/components';
 import { cn } from '@/utils';
 import { EVENT_DATE } from '@/constants/event';
 
 export const CountdownBox = () => {
-  const daysLeft = EVENT_DATE.diff(dayjs(), 'day');
-  const isStarted = daysLeft <= 0;
+  const [isStarted, setIsStarted] = useState(false);
+
+  useEffect(() => {
+    setIsStarted(EVENT_DATE.diff(dayjs(), 'day') <= 0);
+  }, []);
 
   return (
     <div
