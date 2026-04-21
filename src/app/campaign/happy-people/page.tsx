@@ -126,7 +126,7 @@ const CampaignPage = () => {
           {process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID && (
             <Script
               strategy="afterInteractive"
-              src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID}`}
+              src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=${process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID}`}
               onReady={() => {
                 initNaverMap('map', {
                   center: new window.naver.maps.LatLng(37.233643, 127.065661),
