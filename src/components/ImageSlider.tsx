@@ -10,6 +10,10 @@ import { getAssetPath } from '@/utils';
 
 const slides = [
   {
+    src: getAssetPath('image/slide_1.webp'),
+    alt: '담임목사 환영 인사 - 수원동부교회 임재흥 목사: 예수님의 사랑으로 여러분 모두를 환영하고 축복합니다',
+  },
+  {
     src: getAssetPath('image/slide_2.webp'),
     alt: '수원동부교회 소개 - 함께 예배하는 행복한 가정, 함께 성장하는 부흥 공동체 (제자·부흥·사랑·선교·차세대 공동체)',
   },

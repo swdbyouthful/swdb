@@ -4,7 +4,7 @@ import { basename, extname, join } from 'node:path';
 import sharp from 'sharp';
 
 const IMAGE_DIR = new URL('../public/image/', import.meta.url).pathname;
-const TARGETS = /^(main_banner|slide_[2-8])\.png$/i;
+const TARGETS = /^(main_banner|slide_[1-8])\.png$/i;
 
 const formatBytes = (bytes) => {
   if (bytes < 1024) return `${bytes}B`;
