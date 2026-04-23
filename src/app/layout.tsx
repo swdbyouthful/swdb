@@ -3,6 +3,7 @@ import { Diphylleia, Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
 import { cn } from '@/utils';
+import { SITE_URL } from '@/constants/event';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -21,7 +22,6 @@ const diphylleia = Diphylleia({
   display: 'swap',
 });
 
-const SITE_URL = 'https://swdbyouthful.github.io/swdb';
 const OG_IMAGE = `${SITE_URL}/image/main_banner.webp`;
 
 export const metadata: Metadata = {
@@ -85,6 +85,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        <link rel="preconnect" href="https://fastly.jsdelivr.net" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://hangeul.pstatic.net" crossOrigin="anonymous" />
+      </head>
       <body className={cn(geistSans.variable, geistMono.variable, diphylleia.variable, 'h-dvh overflow-y-auto antialiased')}>
         {!!process.env.NEXT_PUBLIC_NAVER_MAP_CLIENT_ID && (
           <Script

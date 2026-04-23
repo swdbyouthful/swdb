@@ -1,7 +1,5 @@
 import { Metadata } from 'next';
-import { CHURCH, EVENT_DATE } from '@/constants/event';
-
-const SITE_URL = 'https://swdbyouthful.github.io/swdb';
+import { CHURCH, EVENT_DATE, SITE_URL } from '@/constants/event';
 
 export const metadata: Metadata = {
   title: '행복한 사람들의 봄 축제',

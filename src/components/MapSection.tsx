@@ -2,9 +2,7 @@
 import { useState } from 'react';
 import Script from 'next/script';
 import { initNaverMap } from '@/utils';
-import { CHURCH, MAP_DEFAULT_OPTIONS } from '@/constants/event';
-
-const MAP_CONTAINER_ID = 'map';
+import { CHURCH, MAP_CONTAINER_ID, MAP_DEFAULT_OPTIONS } from '@/constants/event';
 
 export const MapSection = () => {
   const [mapError, setMapError] = useState(false);

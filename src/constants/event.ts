@@ -1,5 +1,9 @@
 import dayjs from 'dayjs';
 
+export const SITE_URL = 'https://swdbyouthful.github.io/swdb';
+
+export const MAP_CONTAINER_ID = 'map';
+
 export const EVENT_DATE = dayjs('2026-05-31T09:00:00');
 
 export const CHURCH = {

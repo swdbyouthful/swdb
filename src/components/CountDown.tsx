@@ -44,12 +44,14 @@ export const Countdown = ({
   useEffect(() => {
     setMounted(true);
     setTimeLeft(calculateTimeLeft(targetDate));
+
+    const intervalMs = useSeconds ? 1_000 : useMinutes ? 60_000 : 3_600_000;
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft(targetDate));
-    }, 1000);
+    }, intervalMs);
 
     return () => clearInterval(timer);
-  }, [targetDate]);
+  }, [targetDate, useSeconds, useMinutes]);
 
   if (!mounted) {
     return <div role="timer" aria-live="polite" />;
